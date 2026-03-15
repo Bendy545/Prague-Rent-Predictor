@@ -15,7 +15,120 @@
 
 
     <main class="container">
-        <!-- TODO -->
+
+        <div class="result-card" id="resultCard" style="display: none;">
+            <div class="result-label">Estimated Monthly Rent</div>
+            <div class="result-price" id="resultPrice"></div>
+            <div class="result-currency">CZK / month</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Basic Information</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="district">District</label>
+                    <select name="district" id="district">
+                        {% for d in metadata.districts %}
+                        <option value="{{ d }}">{{ d }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="size_m2">Size (m²)</label>
+                    <input type="number" id="size_m2" min="15" max="400" value="60">
+                </div>
+                <div class="form-group">
+                    <label for="room_count">Rooms</label>
+                    <select id="room_count">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="floor_number">Floor</label>
+                    <input type="number" id="floor_number" min="0" max="30" value="3">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Building Details</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="building_type">Building Type</label>
+                    <select id="building_type">
+                        {% for bt in metadata.building_types %}
+                        <option value="{{ bt }}">{{ bt }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="condition">Condition</label>
+                    <select id="condition">
+                        {% for c in metadata.conditions %}
+                        <option value="{{ c }}">{{ c }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ownership">Ownership</label>
+                    <select id="ownership">
+                        {% for o in metadata.ownership_types %}
+                        <option value="{{ o }}">{{ o }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="furnished">Furnished</label>
+                    <select id="furnished">
+                        {% for f in metadata.furnished_options %}
+                        <option value="{{ f }}">{{ f }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="elevator">Elevator</label>
+                    <select id="elevator">
+                        {% for e in metadata.elevator_options %}
+                        <option value="{{ e }}">{{ e }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Amenities</div>
+            <div class="checkbox-grid">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="has_separate_kitchen">
+                    <label for="has_separate_kitchen">Separate Kitchen</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="has_balcony">
+                    <label for="has_balcony">Balcony</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="has_terrace">
+                    <label for="has_terrace">Terrace</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="has_cellar">
+                    <label for="has_cellar">Cellar</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="has_parking">
+                    <label for="has_parking">Parking</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-predict" id="predictBtn">Predict Rent</button>
+
     </main>
 
     <footer class="footer">
