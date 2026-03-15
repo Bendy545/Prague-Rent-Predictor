@@ -10,5 +10,10 @@ pip install -r requirements.txt
 ```
 3. start the app
 ```
-python3 start main.py 
+python3 main.py
+
+or
+
+python main.py
 ```
+
