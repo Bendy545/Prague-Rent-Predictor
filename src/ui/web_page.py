@@ -3,13 +3,22 @@ import pickle
 import pandas as pd
 import json
 import gzip
+import sys
+import os
 
-app = Flask(__name__)
+if getattr(sys, 'frozen', False):
+    BASE_DIR = sys._MEIPASS
+else:
+    BASE_DIR = os.path.dirname(__file__)
 
-with gzip.open('ui/model/rent_model.pkl.gz', 'rb') as f:
+app = Flask(__name__, template_folder=os.path.join(BASE_DIR, 'templates'), static_folder=os.path.join(BASE_DIR, 'static'))
+
+model_dir = os.path.join(BASE_DIR, 'model')
+
+with gzip.open(os.path.join(model_dir, 'rent_model.pkl.gz'), 'rb') as f:
     model = pickle.load(f)
 
-with open('ui/model/feature_metadata.json', 'r', encoding='utf-8') as f:
+with open(os.path.join(model_dir, 'feature_metadata.json'), 'r', encoding='utf-8') as f:
     metadata = json.load(f)
 
 
