@@ -53,6 +53,144 @@ body {
     color: #a69f91;
 }
 
+.container {
+    max-width: 680px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #e8e5df;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1rem;
+    color: #3d3830;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0eeea;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #a69f91;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.55rem 0.7rem;
+    border: 1.5px solid #e2dfd8;
+    border-radius: 7px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #3d3830;
+    background: #fdfbf7;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #c4704b;
+}
+
+/* ── Checkboxes ── */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #c4704b;
+    cursor: pointer;
+}
+
+.checkbox-item label {
+    font-size: 0.85rem;
+    color: #5a5347;
+    cursor: pointer;
+}
+
+/* ── Button ── */
+.btn-predict {
+    width: 100%;
+    padding: 0.8rem;
+    background: #c4704b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+}
+
+.btn-predict:hover {
+    background: #b0623f;
+}
+
+.result-card {
+    background: #3d3830;
+    color: #fdfbf7;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.result-label {
+    font-size: 0.75rem;
+    color: #a69f91;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+}
+
+.result-price {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+.result-currency {
+    font-size: 0.9rem;
+    color: #a69f91;
+    margin-top: 0.15rem;
+}
+
 .footer {
     margin-top: auto;
     text-align: center;
@@ -68,5 +206,7 @@ body {
 
 @media (max-width: 640px) {
     .topbar { padding: 16px 20px; }
-    .hero { padding: 48px 16px 32px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .checkbox-grid { grid-template-columns: 1fr; }
+    .result-price { font-size: 2rem; }
 }

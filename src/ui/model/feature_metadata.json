@@ -1,0 +1,69 @@
+{
+  "numerical_features": [
+    "size_m2",
+    "room_count",
+    "floor_number"
+  ],
+  "categorical_features": [
+    "district",
+    "building_type",
+    "condition",
+    "ownership",
+    "furnished",
+    "elevator"
+  ],
+  "boolean_features": [
+    "has_separate_kitchen",
+    "has_balcony",
+    "has_terrace",
+    "has_cellar",
+    "has_parking"
+  ],
+  "districts": [
+    "Praha 1",
+    "Praha 10",
+    "Praha 15",
+    "Praha 2",
+    "Praha 3",
+    "Praha 4",
+    "Praha 5",
+    "Praha 6",
+    "Praha 7",
+    "Praha 8",
+    "Praha 9"
+  ],
+  "building_types": [
+    "Cihlová",
+    "Dřevostavba",
+    "Kamenná",
+    "Montovaná",
+    "Panelová",
+    "Skeletová",
+    "Smíšená"
+  ],
+  "conditions": [
+    "Dobrý",
+    "Novostavba",
+    "Po rekonstrukci",
+    "Projekt",
+    "Před rekonstrukcí",
+    "V rekonstrukci",
+    "Ve výstavbě",
+    "Velmi dobrý"
+  ],
+  "ownership_types": [
+    "Družstevní",
+    "Osobní"
+  ],
+  "furnished_options": [
+    "No",
+    "Partially",
+    "Unknown",
+    "Yes"
+  ],
+  "elevator_options": [
+    "No",
+    "Unknown",
+    "Yes"
+  ]
+}
